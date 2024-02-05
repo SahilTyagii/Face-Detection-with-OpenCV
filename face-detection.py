@@ -25,3 +25,15 @@ def detect(gray, frame):
         for (X, Y, W, H) in eyes:
             cv2.rectangle(region_of_intrest_color, (X, Y), (X+W, Y+H), (0, 255, 0), 2)
     return frame
+
+# Doing face detection with webcam
+video_capture = cv2.VideoCapture(0) # turning webcam on
+while True:
+    _, frame = video_capture.read() # reading the current frame from webcam
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) # converting current frame to grayscale
+    canvas = detect(gray, frame) 
+    cv2.imshow('Video', canvas) # Showing the output of detect function
+    if cv2.waitKey(1) & 0xFF == ord('q'): # using 'q' key to quit
+        break
+video_capture.release() # turning webcam off
+cv2.destroyAllWindows() # closing the webcam window
