@@ -1,8 +1,6 @@
 # Face-Detection-with-OpenCV
 
 
-# Face Recognition with OpenCV
-
 This Python script utilizes the OpenCV library for real-time face and eye detection using Haar cascades. It captures video from the default webcam and applies face and eye detection algorithms to detect faces and eyes in the video stream.
 
 ## Dependencies
